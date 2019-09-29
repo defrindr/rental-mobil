@@ -1,0 +1,151 @@
+@font-face
+{
+font-family: Slabo;
+src: url('/fonts/Slabo27px-Regular.ttf');
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: Slabo;
+}
+a{
+    color : #fff;
+    text-decoration: none;
+}
+
+.col-1 { width: 8.333333333333334%; }
+.col-2 { width: 16.666666666666668%; }
+.col-3 { width: 25.0%; }
+.col-4 { width: 33.333333333333336%; }
+.col-5 { width: 41.66666666666667%; }
+.col-6 { width: 50.0%; }
+.col-7 { width: 58.333333333333336%; }
+.col-8 { width: 66.66666666666667%; }
+.col-9 { width: 75.0%; }
+.col-10 { width: 83.33333333333334%; }
+.col-11 { width: 91.66666666666667%; }
+.col-12 { width: 100.0%; }
+[class*="col-"] {
+    float: left;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+h1.logo > a{
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    transition: .5s
+}
+h1.logo > a:hover{
+    font-size: 36px;
+    top:1px;
+    text-shadow: 2px 2px 2px #212121;
+    transition: .5s
+}
+
+
+
+
+
+
+
+
+
+div.container{
+    width: 80%;
+    margin: 40px auto;
+}
+div.container > .header{
+    padding: 20px;
+    text-align: left;
+}
+div.container > .header > .title {
+    display: inline;
+    padding: 5px 10px 5px 0;
+    border-width: 0 0 3px 0;
+    border-style: solid;
+    color: #5c6bc0;
+    border-color: #26418f;
+    font-size: 28px;
+}
+.row{
+    width: 100%;
+}
+.box{
+    margin: 10px;
+    background: #FFF;
+    padding: 20px;
+    transition: .5s;
+    border-radius: 5px;
+}
+.box:hover{
+    box-shadow: 0px 0px 10px 2px #5c6bc0;
+    transition: .5s;
+}
+.box > .box-footer {
+    padding: 5px;
+    text-align: right;
+}
+.box > .box-footer > a{
+    color: #eee;
+    background: #8e99f3;
+    padding: 5px 10px;
+    transition: .5s;
+    border-radius: 5px;
+}
+.box > .box-footer > a:hover {
+    background: #26418f;
+    transition: .5s;
+}
+.box > .box-img > img {
+    width: 100%;
+    height: 100%;
+}
+
+/**
+ * 
+ */
+@media only screen and (max-width: 600px){
+    [class*="col-"] {
+        width: 100%;
+    }
+    div.container > .header{
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    .nav > li.toggle{
+        display: none;
+    }
+}
+
+  /* basic style */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto ', sans-serif;
+    font-size: 14px;
+    color: #212121;
+    line-height: 1.4;
+    background-color: #F9F9F9;
+}
+footer{
+    background: #5c6bc0;
+    padding: 20px;
+    text-align: center;
+    border-style: solid;
+    border-width: 5px 0 0;
+    border-color: #343434;
+}
+#contents{
+    min-height: 80vh;
+}

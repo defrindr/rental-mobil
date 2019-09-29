@@ -1,0 +1,192 @@
+$background : #4788dd;
+$background-dark : #19529c;
+$bg-box : #e9e4e3;
+$black : #000;
+/*body{
+    background: $background !important;
+    padding : 20vh 10vw;
+    align-content: center;
+    position: relative;
+    min-height: 100vh;
+    .background{
+        z-index: -1;
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background: $background-dark;
+    }
+    .box-login{
+        box-shadow: 0px 0px 10px 5px #222;
+    }
+    .container-fluid{
+        padding-right: 0;
+        .row{
+            display: block;
+            .col-lg-6{
+                height: 100%;
+                position: relative;
+            }
+            .form-group > .col-md-12{
+                padding: 0;
+            }
+            .container-fluid{
+                .login-head{
+                    text-align: center;
+                    font-size: 24px;
+                    padding: 30px 20px 1px;
+                    color: $background;
+                }
+                padding: 5% 10% 10%;
+            }
+        }
+        .box-login{
+            background: $bg-box;
+            color: $black;
+        }
+    }
+    .btn-primary{
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+    .form-group{
+        padding: 1px;
+    }
+    hr{
+        border-top-color: $background
+    }
+    .image-login{
+        width: 100%;
+        height: 100%;
+        min-height: 400px;
+        margin: 0px;
+    }
+}*/
+:root {
+  --input-padding-x: .75rem;
+  --input-padding-y: .75rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/*body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}*/
+
+.form-signin {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.form-label-group > input:focus{
+    color: #FFF;
+}
+.form-label-group > input,.form-label-group > input:focus{
+    background-color: transparent;
+    border:0;
+    border-radius: 0;
+    border-bottom: 1px solid $background;
+}
+.form-control:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+.form-label-group > input{
+    color: #FFF;
+}
+.form-label-group > input,
+.form-label-group > label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.form-label-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0; /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown) ~ label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #AAA;
+}
+.lay {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+}
+.lay img{
+    width: 100vw;
+    height: 100vh;
+}
+.cover-container{
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 25vh 0 0 0;
+    background: rgba(47,88,99,.8);
+}
