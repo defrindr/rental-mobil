@@ -1969,13 +1969,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     myHeader: function myHeader() {
-      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./header.vue */ "./resources/js/components/layouts/header.vue"));
+      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./header.vue */ "./resources/js/components/layouts/header.vue"));
     },
     myFooter: function myFooter() {
-      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./footer.vue */ "./resources/js/components/layouts/footer.vue"));
+      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./footer.vue */ "./resources/js/components/layouts/footer.vue"));
     },
     sectionUnggul: function sectionUnggul() {
-      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ./index/section-unggul.vue */ "./resources/js/components/layouts/index/section-unggul.vue"));
+      return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ./index/section-unggul.vue */ "./resources/js/components/layouts/index/section-unggul.vue"));
     }
   },
   data: function data() {
@@ -2041,10 +2041,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     myHeader: function myHeader() {
-      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./header.vue */ "./resources/js/components/layouts/header.vue"));
+      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./header.vue */ "./resources/js/components/layouts/header.vue"));
     },
     myFooter: function myFooter() {
-      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./footer.vue */ "./resources/js/components/layouts/footer.vue"));
+      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./footer.vue */ "./resources/js/components/layouts/footer.vue"));
     }
   },
   data: function data() {
@@ -2105,10 +2105,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     myHeader: function myHeader() {
-      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./../layouts/header.vue */ "./resources/js/components/layouts/header.vue"));
+      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./../layouts/header.vue */ "./resources/js/components/layouts/header.vue"));
     },
     myFooter: function myFooter() {
-      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./../layouts/footer.vue */ "./resources/js/components/layouts/footer.vue"));
+      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./../layouts/footer.vue */ "./resources/js/components/layouts/footer.vue"));
     }
   },
   data: function data() {
