@@ -138,14 +138,6 @@ body {
     line-height: 1.4;
     background-color: #F9F9F9;
 }
-footer{
-    background: #5c6bc0;
-    padding: 20px;
-    text-align: center;
-    border-style: solid;
-    border-width: 5px 0 0;
-    border-color: #343434;
-}
 #contents{
     min-height: 80vh;
 }
