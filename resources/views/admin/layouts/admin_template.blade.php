@@ -30,7 +30,7 @@
         }
 
         .navbar {
-          padding: 0 !important;
+            padding: 0 !important;
         }
 
 
@@ -39,6 +39,9 @@
         }
         a{
             cursor: pointer;
+        }
+        .small-box>.small-box-footer{
+            min-height: 20px;
         }
     </style>
 </head>
