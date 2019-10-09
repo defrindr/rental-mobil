@@ -115,6 +115,9 @@ Route::prefix('admin')->group(function(){
     Route::get('costumer/show/{id}','costumersController@show')
                 ->middleware('auth')
                 ->name('costumer_show');
+    Route::get('costumer/cetak/{id}','costumersController@cetak')
+                ->middleware('auth')
+                ->name('costumer_cetak');
 
 
     // * pinjam
@@ -143,4 +146,7 @@ Route::prefix('admin')->group(function(){
     Route::get('pinjam/cetak','pinjamController@cetakAll')
                 ->middleware('auth')
                 ->name('pinjam_cetak_all');
+    Route::get('pinjam/struct/{id}','pinjamController@cetakStruct')
+                ->middleware('auth')
+                ->name('pinjam_cetak');
             });
