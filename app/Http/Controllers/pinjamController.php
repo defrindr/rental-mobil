@@ -213,7 +213,10 @@ class pinjamController extends Controller
         }
     }
 
-
+    /**
+     * cetakAll
+     * Mencetak Semua data pinjam pada bulan ini
+     */
     public function cetakAll(Request $request)
     {
         $bulan = array (1 =>   'Januari',
@@ -248,15 +251,30 @@ class pinjamController extends Controller
                                     ->time($year,$month)
                                     ->select(DB::raw("sum(total) as totalPendapatan"))->get();
 
-        // var_dump(json_encode($pinjams,JSON_PRETTY_PRINT));
-        // exit();    
-        $pinjam = \PDF::loadview('admin.pinjam.template.layout',[
+        $pdf = \PDF::loadview('admin.pinjam.template.layout',[
                         'title' => $title
                         ,'pinjams' => $pinjams
                         ,'totalPendapatan' => $totalPendapatan[0]->totalPendapatan])
                     ->setPaper('f4', 'landscape')
                     ->stream($title.$month.".pdf", array("Attachment" => false));
-        return $pinjam;
+        return $pdf;
+    }
+
+
+    public function cetakStruct($id){
+        $pinjam = pinjamModel::findOrFail($id);
+        $title = "Struct_peminjaman_".str_replace(" ","_",$pinjam->costumer->nama).strtotime($pinjam->tanggal_pinjam)."_".strtotime($pinjam->tanggal_kembali);
+        $pdf = \PDF::loadview('admin.pinjam.template.struct_pinjam',[
+            'pinjam' => $pinjam
+            ,'title' => $title])
+        ->setPaper('f4', 'landscape')
+        ->stream($title.".pdf", array("Attachment" => false));
+        return $pdf;
+
+        // return view('admin.pinjam.template.struct_pinjam',[
+        //     "pinjam" => $pinjam
+        //     ,"title" => $title
+        // ]);
     }
 
 }
