@@ -1,45 +1,43 @@
 <template>
-    <div class="row">
-        <section class="unggul">
-			<div class="head-title">
-				<span>Pelayanan</span>
-			</div>
-			<div class="row">
-				<div class="col-3">
-					<div class="item">
-						<div class="icon"><i class="fa fa-address-card"></i></div>
-						<div class="unggul-desc">
-							Ini deskripsinya 1
-						</div>
-					</div>
-				</div>
-				<div class="col-3">
-					<div class="item">
-						<div class="icon"><i class="fa fa-address-card"></i></div>
-						<div class="unggul-desc">
-							Ini deskripsinya 2
-						</div>
-					</div>
-				</div>
-				<div class="col-3">
-					<div class="item">
-						<div class="icon"><i class="fa fa-address-card"></i></div>
-						<div class="unggul-desc">
-							Ini deskripsinya 3
-						</div>
-					</div>
-				</div>
-				<div class="col-3">
-					<div class="item">
-						<div class="icon"><i class="fa fa-address-card"></i></div>
-						<div class="unggul-desc">
-							Ini deskripsinya 4
-						</div>
+    <section class="unggul">
+		<div class="head-title">
+			<span>Pelayanan</span>
+		</div>
+		<div class="row">
+			<div class="col-3">
+				<div class="item">
+					<div class="icon"><i class="fa fa-address-card"></i></div>
+					<div class="unggul-desc">
+						Ini deskripsinya 1
 					</div>
 				</div>
 			</div>
-		</section>
-    </div>
+			<div class="col-3">
+				<div class="item">
+					<div class="icon"><i class="fa fa-address-card"></i></div>
+					<div class="unggul-desc">
+						Ini deskripsinya 2
+					</div>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="item">
+					<div class="icon"><i class="fa fa-address-card"></i></div>
+					<div class="unggul-desc">
+						Ini deskripsinya 3
+					</div>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="item">
+					<div class="icon"><i class="fa fa-address-card"></i></div>
+					<div class="unggul-desc">
+						Ini deskripsinya 4
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </template>
 <script>
 export default {
