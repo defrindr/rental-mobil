@@ -6,6 +6,7 @@
                 <h3 class="title"><i class="fa fa-arrow-right"></i> {{ title }}</h3>
             </div>
 			<section-unggul/>
+			<my-testi/>
         </div>
 		<my-footer/>
 	</div>
@@ -17,6 +18,7 @@
 			myHeader: () => import('./header.vue'),
 			myFooter: () => import('./footer.vue'),
 			sectionUnggul: () =>import('./index/section-unggul.vue'),
+			myTesti: () => import ('./index/testimonial.vue'),
 		},
 		data() {
 			return {
