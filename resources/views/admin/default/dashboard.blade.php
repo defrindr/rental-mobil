@@ -9,11 +9,14 @@
     <li><a href="#"><i class="fa fa-dashboard"></i> Index </a></li>
     <li><a href="#">Dahsboard</a></li>
 @endsection
+@section('style')
+    
+@endsection
 
 @section('content')
     <section class="content container-fluid">
         <div class='row'>
-            <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+            <div class='col-lg-6 col-md-6 col-sm-6 col-xs-12'>
                 <div class="small-box bg-blue">
                     <div class="inner">
                         <h3>
@@ -23,16 +26,16 @@
                                 {{ "Rp. -" }}
                             @endif
                         </h3>
-                        <p>Pemasukan</p>
+                        <p>Pemasukan bulan ini</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-cash"></i>
                     </div>
-                    <a src="{{ route('pinjam_index') }}" onclick="goto(this);return 0;" class="small-box-footer">More Info ...</a>
+                    <span class="small-box-footer"></span>
                 </div>
             </div>
             {{-- totalPemasukan --}}
-            <div class='@if(MyHelper::isAdmin()) col-lg-3 col-md-3 col-sm-3 @else col-lg-4 col-md-4 col-sm-4 @endif col-xs-12'>
+            <div class='col-lg-6 col-md-6 col-sm-6 col-xs-12'>
                 <div class="small-box bg-yellow">
                     <div class="inner">
                         <h3>
@@ -47,11 +50,11 @@
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
                     </div>
-                    <a src="{{ route('pinjam_index') }}" onclick="goto(this);return 0;" class="small-box-footer">More Info ...</a>
+                    <span class="small-box-footer"></span>
                 </div>
             </div>
             {{-- costumerCount --}}
-            <div class='@if(MyHelper::isAdmin()) col-lg-3 col-md-3 col-sm-3 @else col-lg-4 col-md-4 col-sm-4 @endif  col-xs-12'>
+            <div class='@if(MyHelper::isAdmin()) col-lg-4 col-md-4 col-sm-4 @else col-lg-6 col-md-6 col-sm-6 @endif  col-xs-12'>
                 <div class="small-box bg-green">
                     <div class="inner">
                         <h3>
@@ -66,11 +69,11 @@
                     <div class="icon">
                         <i class="ion ion-android-contacts"></i>
                     </div>
-                    <a src="{{ route('costumer_index') }}" onclick="goto(this);return 0;" class="small-box-footer">More Info ...</a>
+                    <span class="small-box-footer"></span>
                 </div>
             </div>
             {{-- mobilCount --}}
-            <div class="@if(MyHelper::isAdmin()) col-lg-3 col-md-3 col-sm-3 @else col-lg-4 col-md-4 col-sm-4 @endif  col-xs-12">
+            <div class="@if(MyHelper::isAdmin()) col-lg-4 col-md-4 col-sm-4 @else col-lg-6 col-md-6 col-sm-6 @endif  col-xs-12">
                 <div class="small-box bg-purple">
                     <div class="inner">
                         <h3>
@@ -85,12 +88,12 @@
                     <div class="icon">
                         <i class="ion ion-android-car"></i>
                     </div>
-                    <a src="{{ route('costumer_index') }}" onclick="goto(this);return 0;" class="small-box-footer">More Info ...</a>
+                    <span class="small-box-footer"></span>
                 </div>
             </div>
             {{-- adminCount --}}
             @if(MyHelper::isAdmin())
-            <div class="@if(MyHelper::isAdmin()) col-lg-3 col-md-3 col-sm-3 @else col-lg-4 col-md-4 col-sm-4 @endif  col-xs-12">
+            <div class="@if(MyHelper::isAdmin()) col-lg-4 col-md-4 col-sm-4 @else col-lg-6 col-md-6 col-sm-6 @endif  col-xs-12">
                 <div class="small-box bg-red">
                     <div class="inner">
                         <h3>
@@ -105,7 +108,7 @@
                     <div class="icon">
                         <i class="ion ion-android-person"></i>
                     </div>
-                    <a src="{{ route('costumer_index') }}" onclick="goto(this);return 0;" class="small-box-footer">More Info ...</a>
+                    <span class="small-box-footer"></span>
                 </div>
             </div>
             @endif
