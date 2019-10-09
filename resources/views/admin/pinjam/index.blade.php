@@ -30,10 +30,10 @@
                                 <th>Tanggal Kembali</th>
                                 <th>Status</th>
                                 <th>Total</th>
-                                @if(MyHelper::isAdmin())
+                                {{-- @if(MyHelper::isAdmin())
                                     <th>Dibuat oleh </th>
-                                @endif
-                                <th colspan="3" style="text-align:center">Action</th>
+                                @endif --}} {{-- ***Enable this if u need to show , who created pinjam transaction  --}}
+                                <th colspan="4" style="text-align:center">Action</th>
                             </thead>
                             <tbody>
                                 @if (count($pinjams) < 1)
@@ -70,14 +70,17 @@
                                                 {{ "-" }}
                                                 @else
                                                 {{ "Rp. ".MyHelper::toMoney($pinjam->total) }}
-                                                @endif
+                                                @endif1 
                                             </td>
-                                            @if (MyHelper::isAdmin())
+                                            {{-- @if (MyHelper::isAdmin())
                                                 <td>{{ DB::table('admin_module')->Where('id','=',$pinjam->created_by)->select('username')->get()[0]->username }}</td>
-                                            @endif
+                                            @endif --}} {{-- ***Enable this if u need to show , who created pinjam transaction  --}}
                                             @php
                                                 $no +=1;
                                             @endphp
+                                            <td style="text-align:center;padding:3px">
+                                                <a href="{{ route('pinjam_cetak',$pinjam->id) }}" class="btn btn-success text-white btn-xs"><i class="fa fa-print"></i></a>
+                                            </td>
                                             <td style="text-align:center;padding:3px">
                                                 <form method="POST" action="{{ route('pinjam_kembali',$pinjam->id) }}">@csrf @method('PUT')<button class="btn btn-primary btn-xs"><i class="fa fa-spinner"></i></button></form>
                                             </td>
