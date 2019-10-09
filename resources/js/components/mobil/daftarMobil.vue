@@ -6,13 +6,6 @@
 				<h3 class="title"><i class="fa fa-arrow-right"></i> {{ title }}</h3>
             </div>
 			<div class="row">
-				<div class="col-12">
-					<div class="search-box">
-						<input type="text" placeholder="Search ...." onclick="return 0;">
-					</div>
-				</div>
-			</div>
-			<div class="row">
 				<div class="col-4" v-for="(mobil,index) in mobils.data" :key="index">
 					<div class="box">
 						<div class="box-img">
@@ -61,6 +54,9 @@
 	}
 </script>
 <style scoped>
+	.box{
+		border: 1px solid #aaa;
+	}
 	.search-box > input,.search-box > input:focus {
 		width: -webkit-fill-available;
 		height: 30px;
