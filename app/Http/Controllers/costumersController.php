@@ -121,9 +121,7 @@ class costumersController extends Controller
         return $pdf;
     }
 
-
-
-/**
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -135,6 +133,6 @@ class costumersController extends Controller
         $costumer->delete();
         return redirect()
                 ->route('costumer_index')
-                ->with('success','Costumer deleted.');
+                ->with('success','Success deleted costumer.');
     }
 }
