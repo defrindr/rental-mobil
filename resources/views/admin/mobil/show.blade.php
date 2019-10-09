@@ -14,37 +14,42 @@
 			<a src="{{ route('mobil_edit',$mobil->id) }}" onclick="goto(this);return 0;" class="btn btn-warning btn-lg text-white">Update</a>
         </div>
         <div class="box-body">
-        	<center>
-        		<img src="@if(($mobil->image != "") and file_exists('media/mobil/'.$mobil->image)) {{ "/media/mobil/".$mobil->image }} @else {{ "/media/image/no-image.gif" }} @endif" class="img img-fluid img-responsive img-thumbnail">
-        	</center>
-        	<br>
-    		<table class="table text-lg-left">
-	    		<tr>
-	    			<th>ID</th>
-	    			<td>:</td>
-	    			<td>{{ $mobil->id }}</td>
-	    		</tr>
-	    		<tr>
-	    			<th>Merk Mobil</th>
-	    			<td>:</td>
-	    			<td>{{ $mobil->merk }}</td>
-	    		</tr>
-	    		<tr>
-	    			<th>Plat Nomer</th>
-	    			<td>:</td>
-	    			<td>{{ $mobil->plat_nomer }}</td>
-	    		</tr>
-	    		<tr>
-	    			<th>Harga sewa / Jam</th>
-	    			<td>:</td>
-	    			<td>{{ "Rp. ".$mobil->harga }}</td>
-	    		</tr>
-	    		<tr>
-	    			<th>Terdaftar Pada</th>
-	    			<td>:</td>
-	    			<td>{{ $mobil->created_at }}</td>
-	    		</tr>
-    		</table>
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<center>
+						<img src="@if(($mobil->image != "") and file_exists('media/mobil/'.$mobil->image)) {{ "/media/mobil/".$mobil->image }} @else {{ "/media/image/no-image.gif" }} @endif" class="img img-fluid img-responsive img-thumbnail">
+					</center>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<table class="table text-lg-left">
+						<tr>
+							<th>ID</th>
+							<td>:</td>
+							<td>{{ $mobil->id }}</td>
+						</tr>
+						<tr>
+							<th>Merk Mobil</th>
+							<td>:</td>
+							<td>{{ $mobil->merk }}</td>
+						</tr>
+						<tr>
+							<th>Plat Nomer</th>
+							<td>:</td>
+							<td>{{ $mobil->plat_nomer }}</td>
+						</tr>
+						<tr>
+							<th>Harga sewa / Jam</th>
+							<td>:</td>
+							<td>{{ "Rp. ".$mobil->harga }}</td>
+						</tr>
+						<tr>
+							<th>Terdaftar Pada</th>
+							<td>:</td>
+							<td>{{ $mobil->created_at }}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
         </div>
     </div>
 @endsection
