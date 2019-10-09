@@ -111,7 +111,19 @@ class costumersController extends Controller
         }
     }
 
-    /**
+
+    public function cetak($id){
+        $costumer = costumerModel::findOrFail($id);
+        $pdf = \PDF::loadview('admin.costumer.template.kartuAnggota',[
+                            'costumer'=>$costumer])
+                    ->setPaper('f4', 'portrait')
+                    ->stream($costumer->nama.".pdf", array("Attachment" => false));
+        return $pdf;
+    }
+
+
+
+/**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -123,6 +135,6 @@ class costumersController extends Controller
         $costumer->delete();
         return redirect()
                 ->route('costumer_index')
-                ->with('success','Success deleted costumer.');
+                ->with('success','Costumer deleted.');
     }
 }
