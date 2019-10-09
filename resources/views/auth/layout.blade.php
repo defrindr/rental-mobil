@@ -7,6 +7,16 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="/bootstrap4/css/bootstrap.min.css">
+    <style>
+    .alert-danger {
+        color: #eee;
+        background-color: rgba(50,05,05,.3);
+        border-color: #f5c6cb;
+    }
+    .alert{
+        max-width: 390px;
+    }
+    </style>
 </head>
 <body>
     <div class="background"></div>
