@@ -1966,16 +1966,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     myHeader: function myHeader() {
-      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./header.vue */ "./resources/js/components/layouts/header.vue"));
+      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./header.vue */ "./resources/js/components/layouts/header.vue"));
     },
     myFooter: function myFooter() {
-      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./footer.vue */ "./resources/js/components/layouts/footer.vue"));
+      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./footer.vue */ "./resources/js/components/layouts/footer.vue"));
     },
     sectionUnggul: function sectionUnggul() {
       return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ./index/section-unggul.vue */ "./resources/js/components/layouts/index/section-unggul.vue"));
+    },
+    myTesti: function myTesti() {
+      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ./index/testimonial.vue */ "./resources/js/components/layouts/index/testimonial.vue"));
     }
   },
   data: function data() {
@@ -2041,10 +2045,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     myHeader: function myHeader() {
-      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./header.vue */ "./resources/js/components/layouts/header.vue"));
+      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./header.vue */ "./resources/js/components/layouts/header.vue"));
     },
     myFooter: function myFooter() {
-      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./footer.vue */ "./resources/js/components/layouts/footer.vue"));
+      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./footer.vue */ "./resources/js/components/layouts/footer.vue"));
     }
   },
   data: function data() {
@@ -2095,20 +2099,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     myHeader: function myHeader() {
-      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./../layouts/header.vue */ "./resources/js/components/layouts/header.vue"));
+      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./../layouts/header.vue */ "./resources/js/components/layouts/header.vue"));
     },
     myFooter: function myFooter() {
-      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./../layouts/footer.vue */ "./resources/js/components/layouts/footer.vue"));
+      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./../layouts/footer.vue */ "./resources/js/components/layouts/footer.vue"));
     }
   },
   data: function data() {
@@ -6613,7 +6610,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.search-box > input[data-v-12e059e0],.search-box > input[data-v-12e059e0]:focus {\n\twidth: -webkit-fill-available;\n\theight: 30px;\n\tpadding: 5px 10px;\n\tborder: 1px solid #5c6bc0;\n\tborder-radius: 10px;\n\tcolor: #343434;\n\toutline: none !important;\n\tbox-shadow: none !important;\n}\n.box-img[data-v-12e059e0]{\n\twidth: 100%;\n\tmax-height: 250px;\n}\n", ""]);
+exports.push([module.i, "\n.box[data-v-12e059e0]{\n\tborder: 1px solid #aaa;\n}\n.search-box > input[data-v-12e059e0],.search-box > input[data-v-12e059e0]:focus {\n\twidth: -webkit-fill-available;\n\theight: 30px;\n\tpadding: 5px 10px;\n\tborder: 1px solid #5c6bc0;\n\tborder-radius: 10px;\n\tcolor: #343434;\n\toutline: none !important;\n\tbox-shadow: none !important;\n}\n.box-img[data-v-12e059e0]{\n\twidth: 100%;\n\tmax-height: 250px;\n}\n", ""]);
 
 // exports
 
@@ -38154,7 +38151,9 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("section-unggul")
+          _c("section-unggul"),
+          _vm._v(" "),
+          _c("my-testi")
         ],
         1
       ),
@@ -38255,8 +38254,6 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
         _c(
           "div",
           { staticClass: "row" },
@@ -38298,26 +38295,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "search-box" }, [
-          _c("input", {
-            attrs: {
-              type: "text",
-              placeholder: "Search ....",
-              onclick: "return 0;"
-            }
-          })
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

@@ -50,8 +50,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -127,58 +125,56 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("section", { staticClass: "unggul" }, [
-        _c("div", { staticClass: "head-title" }, [
-          _c("span", [_vm._v("Pelayanan")])
+    return _c("section", { staticClass: "unggul" }, [
+      _c("div", { staticClass: "head-title" }, [
+        _c("span", [_vm._v("Pelayanan")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-3" }, [
+          _c("div", { staticClass: "item" }, [
+            _c("div", { staticClass: "icon" }, [
+              _c("i", { staticClass: "fa fa-address-card" })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "unggul-desc" }, [
+              _vm._v("\n\t\t\t\t\t\tIni deskripsinya 1\n\t\t\t\t\t")
+            ])
+          ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-3" }, [
-            _c("div", { staticClass: "item" }, [
-              _c("div", { staticClass: "icon" }, [
-                _c("i", { staticClass: "fa fa-address-card" })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "unggul-desc" }, [
-                _vm._v("\n\t\t\t\t\t\t\tIni deskripsinya 1\n\t\t\t\t\t\t")
-              ])
+        _c("div", { staticClass: "col-3" }, [
+          _c("div", { staticClass: "item" }, [
+            _c("div", { staticClass: "icon" }, [
+              _c("i", { staticClass: "fa fa-address-card" })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "unggul-desc" }, [
+              _vm._v("\n\t\t\t\t\t\tIni deskripsinya 2\n\t\t\t\t\t")
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-3" }, [
-            _c("div", { staticClass: "item" }, [
-              _c("div", { staticClass: "icon" }, [
-                _c("i", { staticClass: "fa fa-address-card" })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "unggul-desc" }, [
-                _vm._v("\n\t\t\t\t\t\t\tIni deskripsinya 2\n\t\t\t\t\t\t")
-              ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-3" }, [
+          _c("div", { staticClass: "item" }, [
+            _c("div", { staticClass: "icon" }, [
+              _c("i", { staticClass: "fa fa-address-card" })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "unggul-desc" }, [
+              _vm._v("\n\t\t\t\t\t\tIni deskripsinya 3\n\t\t\t\t\t")
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-3" }, [
-            _c("div", { staticClass: "item" }, [
-              _c("div", { staticClass: "icon" }, [
-                _c("i", { staticClass: "fa fa-address-card" })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "unggul-desc" }, [
-                _vm._v("\n\t\t\t\t\t\t\tIni deskripsinya 3\n\t\t\t\t\t\t")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-3" }, [
-            _c("div", { staticClass: "item" }, [
-              _c("div", { staticClass: "icon" }, [
-                _c("i", { staticClass: "fa fa-address-card" })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "unggul-desc" }, [
-                _vm._v("\n\t\t\t\t\t\t\tIni deskripsinya 4\n\t\t\t\t\t\t")
-              ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-3" }, [
+          _c("div", { staticClass: "item" }, [
+            _c("div", { staticClass: "icon" }, [
+              _c("i", { staticClass: "fa fa-address-card" })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "unggul-desc" }, [
+              _vm._v("\n\t\t\t\t\t\tIni deskripsinya 4\n\t\t\t\t\t")
             ])
           ])
         ])
