@@ -172,7 +172,7 @@ class mobilController extends Controller
         {
             return redirect()
                     ->route('mobil_index')
-                    ->with('error','Error when updated Data :'.$e);
+                    ->with('error','Error when updated Data :');
         }
     }
 
