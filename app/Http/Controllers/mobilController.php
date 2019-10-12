@@ -155,8 +155,8 @@ class mobilController extends Controller
                     unlink($destinationPath.$mobil->image);
                 }
                 $file->move($destinationPath,$fileName);
+                $mobil->image = $fileName;
             }
-            $mobil->image = $fileName;
             $mobil->merk = $request->merk;
             $mobil->plat_nomer = $request->plat_nomer;
             $mobil->harga = $request->harga;
