@@ -35,7 +35,7 @@
 					<span class="input-group-addon">
 						<span class="glyphicon glyphicon-calendar"></span>
 					</span>
-					<input type="text" class="form-control" id="datetimepicker1" name="tanggal_pinjam" value="{{ date("m/d/Y H:i A",strtotime($pinjam->tanggal_pinjam)) }}" placeholder="Tanggal Pinjam" />
+					<input type="text" class="form-control" id="datetimepicker1" name="tanggal_pinjam" @if(($pinjam->tanggal_pinjam != null) and ($pinjam->tanggal_pinjam != "")) value="{{ date("m/d/Y H:i A",strtotime($pinjam->tanggal_pinjam)) }}" @endif placeholder="Tanggal Pinjam" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -44,9 +44,10 @@
 					<span class="input-group-addon">
 						<span class="glyphicon glyphicon-calendar"></span>
 					</span>
-					<input type="text" class="form-control" id="datetimepicker2" @if(($pinjam->tanggal_kembali !=null) or ($pinjam->tanggal_kembali != "")) value="{{ date("m/d/Y H:i A",strtotime($pinjam->tanggal_kembali)) }}" @endif name="tanggal_kembali" placeholder="Tanggal Kembali" />
+					<input type="text" class="form-control" id="datetimepicker2" @if(($pinjam->tanggal_kembali !=null) and ($pinjam->tanggal_kembali != "")) value="{{ date("m/d/Y H:i A",strtotime($pinjam->tanggal_kembali)) }}" @endif name="tanggal_kembali" placeholder="Tanggal Kembali" />
 				</div>
 			</div>
+			( Jangan isi jika tidak ingin mengubah data )
 		</div>
 	</div>
 
