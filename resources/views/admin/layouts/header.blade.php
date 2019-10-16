@@ -28,18 +28,13 @@
 						<img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
 						<p>
-							{{ Auth::user()->username }} - Web Developer
-							<small>Member since Nov. 2012</small>
+							{{ Auth::user()->username }}
+							<small>Have a nice day</small>
 						</p>
 						</li>
 						<!-- Menu Footer-->
 						<li class="user-footer">
-							<div class="pull-left">
-								<a href="#" class="btn btn-default btn-flat">Profile</a>
-							</div>
-							<div class="pull-right">
-								<a href="/logout" class="btn btn-default btn-flat">Logout</a>
-							</div>
+							<a href="/logout" class="btn btn-md btn-danger text-white btn-block">Logout</a>
 						</li>
 					</ul>
 				</li>
