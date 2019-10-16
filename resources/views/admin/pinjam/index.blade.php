@@ -70,7 +70,7 @@
                                                 {{ "-" }}
                                                 @else
                                                 {{ "Rp. ".MyHelper::toMoney($pinjam->total) }}
-                                                @endif1 
+                                                @endif
                                             </td>
                                             {{-- @if (MyHelper::isAdmin())
                                                 <td>{{ DB::table('admin_module')->Where('id','=',$pinjam->created_by)->select('username')->get()[0]->username }}</td>
