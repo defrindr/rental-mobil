@@ -166,13 +166,13 @@ class mobilController extends Controller
 
             return redirect()
                     ->route('mobil_index')
-                    ->with('success','Success updated Data');
+                    ->with('success','Success updated Data.');
         }
         catch(\Exception $e)
         {
             return redirect()
                     ->route('mobil_index')
-                    ->with('error','Error when updated Data :');
+                    ->with('error','Error when updated Data.');
         }
     }
 
@@ -185,10 +185,15 @@ class mobilController extends Controller
     public function destroy($id)
     {
         $mobil = mobilModel::findOrFail($id);
-        $mobil->delete();
-        return redirect()
+        if($mobil->delete()){
+            return redirect()
+                    ->route('mobil_index')
+                    ->with('success','Deleted Data Success');
+        }else{
+            return redirect()
                 ->route('mobil_index')
-                ->with('success','Deleted Data Success');
+                ->with('error', 'Error when delete data.');
+        }
     }
 
 }
