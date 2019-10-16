@@ -33,10 +33,9 @@ class adminController extends Controller
         try{
             if(strlen($request->password) < 8)
             {
-                DB::rollback();
                 return redirect()
                         ->route('user_create')
-                        ->with('error','Password length must greather than 8');
+                        ->with('error','Password length must greather than 8.');
             }else
             {
                 $request->merge(['password' => bcrypt($request->password)]);
@@ -47,13 +46,13 @@ class adminController extends Controller
                 $newUser->save();
                 return redirect()
                         ->route('user_index')
-                        ->with('success','Success added user');
+                        ->with('success','Success added new user.');
             }
         }catch(\Exception $e)
         {
             return redirect()
                     ->route('user_index')
-                    ->with('error','Something went wrong with add user.');
+                    ->with('error','Something went wrong when add user.');
         }
     }
 
@@ -101,13 +100,13 @@ class adminController extends Controller
 
             return redirect()
                     ->route('user_index')
-                    ->with('success','Success updated user');
+                    ->with('success','Success updated user.');
         }
         catch(\Exception $e)
         {
             return redirect()
                     ->route('user_index')
-                    ->with('error','Error updated user');
+                    ->with('error','Error updated user.');
         }
     }
 
@@ -115,9 +114,16 @@ class adminController extends Controller
     public function destroy($id)
     {
         $user = adminModel::findOrFail($id);
-        $user->delete();
-        return redirect()
+        if($user->delete())
+        {
+            return redirect()
+                    ->route('user_index')
+                    ->with('success','Success Deleted User.');
+        }else{
+
+            return redirect()
                 ->route('user_index')
-                ->with('success','Success Deleted User');
+                ->with('success', 'Error Deleting User.');
+        }
     }
 }
