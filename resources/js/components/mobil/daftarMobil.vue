@@ -6,7 +6,7 @@
 				<h3 class="title"><i class="fa fa-arrow-right"></i> {{ title }}</h3>
             </div>
 			<div class="row">
-				<div class="col-4" v-for="(mobil,index) in mobils.data" :key="index">
+				<div v-for="(mobil,index) in mobils.data" :key="index" class="col-4">
 					<div class="box">
 						<div class="box-img">
 							<img :src="'/media/mobil/'+mobil.image"/>
@@ -57,18 +57,9 @@
 	.box{
 		border: 1px solid #aaa;
 	}
-	.search-box > input,.search-box > input:focus {
-		width: -webkit-fill-available;
-		height: 30px;
-		padding: 5px 10px;
-		border: 1px solid #5c6bc0;
-		border-radius: 10px;
-		color: #343434;
-		outline: none !important;
-		box-shadow: none !important;
-	}
 	.box-img{
+		display: block;
 		width: 100%;
-		max-height: 250px;
+		height: 250px;
 	}
 </style>
