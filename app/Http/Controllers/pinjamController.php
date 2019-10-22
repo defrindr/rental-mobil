@@ -127,21 +127,31 @@ class pinjamController extends Controller
         $mobil = mobilModel::findOrFail($pinjam->id_mobil);
 
         if($request->tanggal_pinjam == null){
-            $request->tanggal_pinjam = $pinjam->tanggal_pinjam;
+            $request->merge([
+                "tanggal_pinjam" => $pinjam->tanggal_pinjam]);
         }else{
-            $request->merge(['tanggal_pinjam' => date('Y-m-d H:i:s',strtotime($request->tanggal_pinjam))]);
+            $request->merge([
+                'tanggal_pinjam' => date('Y-m-d H:i:s',strtotime($request->tanggal_pinjam))]);
         }
-
-        $request->merge([
-                    'status' => (($request->status=="on") ? 1 : 0),
+        if($pinjam->status == 1){
+            if ($request->tanggal_kembali == null) {
+                $request->merge([
+                    'tanggal_kembali' => $pinjam->tanggal_kembali]);
+            }else{
+                $request->merge([
                     'tanggal_kembali' => date('Y-m-d H:i:s',strtotime($request->tanggal_kembali))]);
+            }
+        }else{
+            $request->merge([
+                    'tanggal_kembali' => date('Y-m-d H:i:s', strtotime($request->tanggal_kembali))]);
+        }
+        $request->merge([
+                    'status' => (($request->status=="on") ? 1 : 0)]);
         $request->request->add([
                     'updated_at' => date('Y-m-d H:i:s',time())]);
-
         if( $request->status == 1) // status dikembalikan
         {
             $mobil->status = 1; // mobil tersedia
-            
             if( strtotime( $request->tanggal_pinjam ) > strtotime( $request->tanggal_kembali ) )
             {
                 return redirect()
@@ -176,6 +186,7 @@ class pinjamController extends Controller
         }
         else if( $request->status == 0) // status masih dipinjam
         {
+
             $mobil->status = 0; // Mobil masih dipinjam
             $request->merge([
                         'tanggal_kembali' => null]);
