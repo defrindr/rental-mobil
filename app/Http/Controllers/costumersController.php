@@ -8,6 +8,7 @@ use App\Models\costumerModel;
 
 class costumersController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -22,6 +23,7 @@ class costumersController extends Controller
         return view('admin.costumer.index',[
                         'costumers'=>$costumer]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -41,22 +43,29 @@ class costumersController extends Controller
      */
     public function store(Request $request)
     {
-        // var_dump($request->all());
-        // exit();
         try{
             $costumer = new costumerModel;
             $request->request->add([
                             'created_at'=>date('Y-m-d H:i:s',time())
                             ,'updated_at'=>date('Y-m-d H:i:s',time())]);
             $costumer->fill($request->all());
-            $costumer->save();
+            if($costumer->save())
+            {
+                return redirect()
+                        ->route('costumer_index')
+                        ->with('success','Success costumer added data.');
+            }
+            else {
+                return redirect()
+                    ->route('costumer_index')
+                    ->with('error', 'Error when adding data.');
+
+            }
+        }catch(\Exception $e)
+        {
             return redirect()
                     ->route('costumer_index')
-                    ->with('success','Success added data');
-        }catch(\Exception $e){
-            return redirect()
-                    ->route('costumer_index')
-                    ->with('error','Error added data');
+                    ->with('error','Error when adding data.');
         }
 
     }
@@ -87,6 +96,7 @@ class costumersController extends Controller
                         'costumer'=>$costumer]);
     }
 
+
     /**
      * Update the specified resource in storage.
      *
@@ -100,23 +110,40 @@ class costumersController extends Controller
             $costumer = costumerModel::findOrFail($id);
             $request->request->add(['updated_at'=>date('Y-m-d H:i:s',time())]);
             $costumer->update($request->all());
-            $costumer->save();
+            if($costumer->save())
+            {
+                return redirect()
+                    ->route('costumer_index')
+                    ->with('success', 'Success updated data.');
+            }else
+            {
+
+                return redirect()
+                    ->route('costumer_index')
+                    ->with('error', 'Error when updating data.');
+            }
+            
+        }catch(\Exception $e)
+        {
             return redirect()
                     ->route('costumer_index')
-                    ->with('success','Success added data');
-        }catch(\Exception $e){
-            return redirect()
-                    ->route('costumer_index')
-                    ->with('error','Error when added data.');
+                    ->with('error','Error when updating data.');
         }
     }
 
 
-    public function cetak($id){
+    /**
+     * Generating member card with pdf format
+     * 
+     * @param $id
+     * @return void $pdf
+     */
+    public function cetak($id)
+    {
         $costumer = costumerModel::findOrFail($id);
         $pdf = \PDF::loadview('admin.costumer.template.kartuAnggota',[
                             'costumer'=>$costumer])
-                    ->setPaper('f4', 'portrait')
+                    ->setPaper([0,0,400,310],'portrait')
                     ->stream($costumer->nama.".pdf", array("Attachment" => false));
         return $pdf;
     }
@@ -130,9 +157,17 @@ class costumersController extends Controller
     public function destroy($id)
     {
         $costumer = costumerModel::findOrFail($id);
-        $costumer->delete();
-        return redirect()
+        if($costumer->delete())
+        {
+            return redirect()
+                    ->route('costumer_index')
+                    ->with('success','Success deleted costumer.');
+        }
+        else 
+        {
+            return redirect()
                 ->route('costumer_index')
-                ->with('success','Success deleted costumer.');
+                ->with('success', 'Error when deleting costumer.');
+        }
     }
 }
