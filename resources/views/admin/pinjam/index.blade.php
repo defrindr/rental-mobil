@@ -95,7 +95,7 @@
                                 @endif
                             </tbody>
                         </table>
-                        {{ $pinjams->links('admin.pinjam.paginate') }}
+                        {{ $pinjams->links('admin.default.paginate') }}
                     </div>
                 </div>
             </div>

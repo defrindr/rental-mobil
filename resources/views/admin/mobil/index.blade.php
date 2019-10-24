@@ -68,7 +68,7 @@
                                 @endif
                             </tbody>
                         </table>
-                        {{ $mobils->links('admin.mobil.paginate') }}
+                        {{ $mobils->links('admin.default.paginate') }}
                     </div>
                 </div>
             </div>
