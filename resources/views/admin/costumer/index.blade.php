@@ -66,7 +66,7 @@
                                 @endif
                             </tbody>
                         </table>
-                        {{ $costumers->links('admin.default.paginate') }}
+                        {{ $costumers->links('admin.default.paginate',["js" => "pageCostumer"]) }}
                     </div>
                 </div>
             </div>

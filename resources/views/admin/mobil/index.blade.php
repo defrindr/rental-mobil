@@ -74,7 +74,7 @@
                                 @endif
                             </tbody>
                         </table>
-                        {{ $mobils->links('admin.default.paginate') }}
+                        {{ $mobils->links('admin.default.paginate',["js" => "pageMobil"]) }}
                     </div>
                 </div>
             </div>

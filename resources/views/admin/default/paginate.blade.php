@@ -7,7 +7,7 @@
             </li>
         @else
             <li class="page-item">
-                <li class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')" onclick="pageCostumer(this)">&lsaquo;</li>
+                <li class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')" onclick="{{ $js }}(this)">&lsaquo;</li>
             </li>
         @endif
         {{-- Pagination Elements --}}
@@ -22,7 +22,7 @@
                     @if ($page == $paginator->currentPage())
                         <li class="page-item active" aria-current="page"><span class="page-link">{{ $page }}</span></li>
                     @else
-                        <li class="page-item"><li class="page-link" href="{{ $url }}" onclick="pageCostumer(this)">{{ $page }}</li></li>
+                        <li class="page-item"><li class="page-link" href="{{ $url }}" onclick="{{ $js }}(this)">{{ $page }}</li></li>
                     @endif
                 @endforeach
             @endif
@@ -30,7 +30,7 @@
         {{-- Next Page Link --}}
         @if ($paginator->hasMorePages())
             <li class="page-item">
-                <li class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')" onclick="pageCostumer(this)">&rsaquo;</li>
+                <li class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')" onclick="{{ $js }}(this)">&rsaquo;</li>
             </li>
         @else
             <li class="page-item disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
