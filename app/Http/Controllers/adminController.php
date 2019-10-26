@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\MyHelper;
 use App\Models\adminModel;
 
 use Illuminate\Http\Request;
@@ -114,16 +115,20 @@ class adminController extends Controller
     public function destroy($id)
     {
         $user = adminModel::findOrFail($id);
-        if($user->delete())
-        {
-            return redirect()
-                    ->route('user_index')
-                    ->with('success','Success Deleted User.');
-        }else{
-
+        if($user->id != MyHelper::id()){
+            if ($user->delete()) {
+                    return redirect()
+                        ->route('user_index')
+                        ->with('success', 'Success Deleted User.');
+                } else {
+                    return redirect()
+                        ->route('user_index')
+                        ->with('error', 'Error Deleting User.');
+                }
+        } else {
             return redirect()
                 ->route('user_index')
-                ->with('success', 'Error Deleting User.');
+                ->with('error', 'Admin can\'t delete.');
         }
     }
 }
