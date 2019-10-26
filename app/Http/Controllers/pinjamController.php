@@ -61,16 +61,23 @@ class pinjamController extends Controller
     public function store(Request $request)
     {
         $pinjam = new pinjamModel();
-        $mobil = mobilModel::findOrFail($request->id_mobil);
+        try
+        {
+            $mobil = mobilModel::findOrFail($request->id_mobil);
+        }catch(\Exception $e) {
+            return redirect()
+                ->route('pinjam_index')
+                ->with('error', 'Maybe wrong when fetch data mobil.');
+        }
+        
         $request->merge([
-                        'tanggal_pinjam'  =>  date('Y-m-d H:i:s',strtotime($request->tanggal_pinjam))]);
+            'tanggal_pinjam'  =>  date('Y-m-d H:i:s',strtotime($request->tanggal_pinjam))]);
         $request->request->add([
-                        'created_by'  =>  MyHelper::id(),
-                        'created_at' => date('Y-m-d H:i:s',time()),
-                        'status' => 0,
-                        'total' => 0,
-                        'updated_at' => date('Y-m-d H:i:s',time())]);
-        //
+                    'created_by'  =>  MyHelper::id(),
+                    'created_at' => date('Y-m-d H:i:s',time()),
+                    'status' => 0,
+                    'total' => 0,
+                    'updated_at' => date('Y-m-d H:i:s',time())]);
         if($mobil->status == 1)
         {
             $mobil->status = 0;
@@ -112,13 +119,11 @@ class pinjamController extends Controller
                         ->OrWhere('id','=',$pinjam->id_mobil)
                         ->orderBy('merk')
                         ->get();
-
         return view('admin.pinjam.edit',[
                         'pinjam' => $pinjam
                         ,'costumers' => $costumers
                         ,'mobils' => $mobils]);
     }
-
 
 
     public function update(Request $request, $id)
@@ -186,7 +191,6 @@ class pinjamController extends Controller
         }
         else if( $request->status == 0) // status masih dipinjam
         {
-
             $mobil->status = 0; // Mobil masih dipinjam
             $request->merge([
                         'tanggal_kembali' => null]);
