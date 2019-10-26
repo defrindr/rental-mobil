@@ -23,7 +23,7 @@
                     <input type="file" name="image" class="form-control"/>
                 </div>
                 <div style="text-align:right">
-                        <button type="submit" class="btn btn-success text-white btn-lg">Submit</button>
+                        <button type="submit" class="btn btn-success text-white btn-lg"  onclick="return confirm('Apakah data yang anda masukkan sudah benar ?')">Submit</button>
                         <a class="btn btn-danger btn-close text-white btn-lg" onclick="goto(this);return 0" src="{{ route('mobil_index') }}">Cancel</a>
                 </div>
 @else
@@ -51,7 +51,7 @@
                     <input type="file" name="image" class="form-control"/>
                 </div>
                 <div style="text-align:right">
-                        <button type="submit" class="btn btn-success text-white btn-lg">Submit</button>
+                        <button type="submit" class="btn btn-success text-white btn-lg"  onclick="return confirm('Apakah data yang anda masukkan sudah benar ?')">Submit</button>
                         <a class="btn btn-danger btn-close text-white btn-lg" onclick="goto(this);return 0" src="{{ route('mobil_index') }}">Cancel</a>
                 </div>
 @endif

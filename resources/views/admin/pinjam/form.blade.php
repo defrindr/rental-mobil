@@ -53,7 +53,7 @@
 
 
 	<div class="form-group pull-right">
-		<button class="btn btn-success">Submit</button>
+		<button class="btn btn-success"  onclick="return confirm('Apakah data yang anda masukkan sudah benar ?')">Submit</button>
 		<a src="{{ route('pinjam_index') }}" onclick="goto(this);return 0" class="btn btn-danger text-white">Cancel</a>
 	</div>
 @else
@@ -86,7 +86,7 @@
 		</div>
 	</div>
 	<div class="form-group pull-right">
-		<button class="btn btn-success">Submit</button>
+		<button class="btn btn-success" onclick="return confirm('Apakah data yang anda masukkan sudah benar ?')">Submit</button>
 		<a src="{{ route('pinjam_index') }}" onclick="goto(this);return 0" class="btn btn-danger text-white">Cancel</a>
 	</div>
 @endif

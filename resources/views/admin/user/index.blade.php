@@ -51,7 +51,13 @@
                                                 <a src="{{ route('user_edit',$user->id) }}" onclick="goto(this);return 0" class="btn btn-warning btn-xs text-white"><i class="fa fa-pencil-square-o"></i></a>
                                             </td>
                                             <td style="text-align:center;padding:3px">
-                                                <form method="POST" action="{{ route('user_destroy',$user->id) }}">@csrf @method('DELETE')<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></form>
+                                                <form method="POST" action="{{ route('user_destroy',$user->id) }}">
+                                                    @csrf 
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin menghapus data ini ?')">
+                                                        <i class="fa fa-trash-o"></i>
+                                                    </button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach

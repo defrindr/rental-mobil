@@ -82,13 +82,25 @@
                                                 <a href="{{ route('pinjam_cetak',$pinjam->id) }}" class="btn btn-success text-white btn-xs"><i class="fa fa-print"></i></a>
                                             </td>
                                             <td style="text-align:center;padding:3px">
-                                                <form method="POST" action="{{ route('pinjam_kembali',$pinjam->id) }}">@csrf @method('PUT')<button class="btn btn-primary btn-xs"><i class="fa fa-spinner"></i></button></form>
+                                                <form method="POST" action="{{ route('pinjam_kembali',$pinjam->id) }}">
+                                                    @csrf 
+                                                    @method('PUT')
+                                                    <button class="btn btn-primary btn-xs" onclick="return confirm('Yakin ingin menyelesaikan transaksi data ini ?')">
+                                                        <i class="fa fa-spinner"></i>
+                                                    </button>
+                                                    </form>
                                             </td>
                                             <td style="text-align:center;padding:3px">
                                                 <a src="{{ route('pinjam_edit',$pinjam->id) }}" onclick="goto(this);return 0" class="btn btn-warning btn-xs text-white"><i class="fa fa-pencil-square-o"></i></a>
                                             </td>
                                             <td style="text-align:center;padding:3px">
-                                                <form method="POST" action="{{ route('pinjam_destroy',$pinjam->id) }}">@csrf @method('DELETE')<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button></form>
+                                                <form method="POST" action="{{ route('pinjam_destroy',$pinjam->id) }}">
+                                                    @csrf 
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin menghapus data ini ?')">
+                                                        <i class="fa fa-trash-o"></i>
+                                                    </button>
+                                                    </form>
                                             </td>
                                         </tr>
                                     @endforeach
