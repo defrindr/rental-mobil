@@ -1,6 +1,6 @@
 /**
  * Mobil Filter Start
- * @param  {[type]} ){                 let q [description]
+ * @param  {[type]} q [description]
  * @return {[type]}     [description]
  */
 $('#filterMobil').keyup(function () {
@@ -31,8 +31,6 @@ $('#filterMobil').change(function(){
             $('#table-content').html(datas);
     });
 });
-
-
 function pageMobil(pages) {
     const urls = () => {
         let q = $('#filterMobil').find("input[name=q]").val();
@@ -106,18 +104,6 @@ function pageUser(pages) {
  * @param  {[type]} ){                 let q [description]
  * @return {[type]}     [description]
  */
-// $('#filterCostumer').change(function(){
-//     let q = $('#filterCostumer').find("input[name=q]").val();
-//     $.ajax({
-//             url: '?q='+q,
-//             type: 'GET',
-//             dataType: 'html'
-//     }).done(function(data){
-//         console.log(data);
-//             let datas = $(data).find('#table-content').html();
-//             $('#table-content').html(datas);
-//     });
-// });
 $('#filterCostumer').keyup(function () {
     let q = $('#filterCostumer').find("input[name=q]").val();
     $.ajax({
@@ -129,7 +115,6 @@ $('#filterCostumer').keyup(function () {
         $('#table-content').html(datas);
     });
 });
-
 function pageCostumer(pages) {
     const urls = () => {
         let q = $('#filterCostumer').find("input[name=q]").val();
@@ -149,6 +134,7 @@ function pageCostumer(pages) {
 /**
  * filterCostumer end
  */
+
 
 
 
@@ -189,20 +175,33 @@ $('#filterPinjam').change(function () {
     });
 });
 
+function pagePinjam(pages) {
+    const urls = () => {
+            let q = $('#filterPinjam').find("input[name=q]").val();
+            let year = $('#filterPinjam').find("select[name=year]").children("option:selected").val();
+            let month = $('#filterPinjam').find("select[name=month]").children("option:selected").val();
+        return '?q=' + q + '&year=' + year + '&month=' + month;
+    };
+    let url = urls();
+    let page = $(pages).attr('href').split("page=")[1];
+    $.ajax({
+        url: url + "&page=" + page,
+        type: 'GET',
+        dataType: 'html'
+    }).done(function (data) {
+        let datas = $(data).find('#table-content').html();
+        $('#table-content').html(datas);
+    });
+}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+/**
+ * Goto to url via ajax,
+ * And add response to #body 
+ * @param {*} tmp 
+ */
 function goto(tmp) {
     let link = $(tmp).attr('src');
     $.ajax({
@@ -221,14 +220,6 @@ function goto(tmp) {
         $('#body').html(datas);
     });
 }
-
-
-
-
-
-
-
-
 
 //Date picker
 $(function () {
