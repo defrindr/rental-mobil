@@ -74,12 +74,17 @@
                                             </td>
                                             {{-- @if (MyHelper::isAdmin())
                                                 <td>{{ DB::table('admin_module')->Where('id','=',$pinjam->created_by)->select('username')->get()[0]->username }}</td>
-                                            @endif --}} {{-- ***Enable this if u need to show , who created pinjam transaction  --}}
+                                            @endif --}} {{-- ***Enable this if u need to show , the person who created pinjam transaction --}}
                                             @php
                                                 $no +=1;
                                             @endphp
                                             <td style="text-align:center;padding:3px">
-                                                <a href="{{ route('pinjam_cetak',$pinjam->id) }}" class="btn btn-success text-white btn-xs"><i class="fa fa-print"></i></a>
+                                                <a href="{{ route('pinjam_cetak',$pinjam->id) }}" target="blank" @if($pinjam->status)
+                                                     class="btn btn-success text-white btn-xs"  
+                                                    @else
+                                                     onclick="return false" disabled="disabled"
+                                                      class="btn btn-success text-white btn-xs disabled" 
+                                                    @endif><i class="fa fa-print"></i></a>
                                             </td>
                                             <td style="text-align:center;padding:3px">
                                                 <form method="POST" action="{{ route('pinjam_kembali',$pinjam->id) }}">
