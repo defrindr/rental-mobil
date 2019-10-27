@@ -9,6 +9,7 @@
 				text-align: center;
 			}
 			.table {
+				margin-top: 5%;
 				width: 98vw;
 				text-align: left;
 			}
@@ -18,16 +19,16 @@
 			td,th{
 				padding: 6px;
 			}
-			tr:nth-child(even){
+			.table > tbody > tr:nth-child(even){
 				background: #EEE;
 			}
-			tr:nth-child(odd){
+			.table > tbody > tr:nth-child(odd){
 				background: #FFE;
 			}
 			th{
 				background: #EEE;
 			}
-			tr:last-child{
+			.table > tbody > tr:last-child{
 				background: rgba(192,89,20,.5);
 			}
 		</style>
@@ -36,6 +37,28 @@
 		<div class="text-center">
 			<h1>{{ $title }}</h1>
 			<hr>
+			<table>
+				<tr>
+					<td>Jumlah transaksi bulan ini</td>
+					<td>:</td>
+					<td><?= $totalTransaksi ?></td>
+				</tr>
+				<tr>
+					<td>Jumlah transaksi belum lunas</td>
+					<td>:</td>
+					<td><?= $transaksiBelumLunas ?></td>
+				</tr>
+				<tr>
+					<td>Tanggal Laporan dibuat</td>
+					<td>:</td>
+					<td><?= MyHelper::getTimeNow() ?></td>
+				</tr>
+				<tr>
+					<td>Pembuat laporan</td>
+					<td>:</td>
+					<td><?= MyHelper::getuserName() ?></td>
+				</tr>
+			</table>
 			<table class="table table-stripped table-bordered">
 				<thead>
 					<tr>
@@ -56,7 +79,7 @@
 							<tr>
 								<td>{{ $no }}</td>
 								<td>{{ $pinjam->costumer->nama }}</td>
-								<td>{{ $pinjam->mobil->merk }} / {{ $pinjam->mobil->plat_nomer }}</td>
+								<td>{{ $pinjam->mobil->merk }} ( {{ $pinjam->mobil->plat_nomer }} )</td>
 								<td>{{ "Rp. ".MyHelper::toMoney($pinjam->mobil->harga) }}</td>
 								<td>{{ MyHelper::setDate($pinjam->tanggal_pinjam )}}</td>
 								<td>
