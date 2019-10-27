@@ -308,18 +308,32 @@ class pinjamController extends Controller
             if ($request->month != "") $month = $request->month;
             //
             $title = "Laporan pemasukan bulan " . $bulan[$month] . " " . $year;
-            $pinjams = pinjamModel::Where(['created_by' => MyHelper::id()])
+            $pinjams = pinjamModel::Where(['created_by' => MyHelper::id(),'pinjam_module.status' => 1])
                 ->cari($q)
                 ->time($year, $month)
                 ->orderBy('pinjam_module.created_at', 'desc')
                 ->get();
-            $totalPendapatan = pinjamModel::Where(['created_by' => MyHelper::id()])
+            $transaksiBelumLunas =  pinjamModel::Where(['created_by' => MyHelper::id(),'pinjam_module.status' => 0])
+                ->cari($q)
+                ->time($year, $month)
+                ->orderBy('pinjam_module.created_at', 'desc')
+                ->count();
+            $totalTransaksi =  pinjamModel::Where(['created_by' => MyHelper::id()])
+                ->cari($q)
+                ->time($year, $month)
+                ->orderBy('pinjam_module.created_at', 'desc')
+                ->count();
+            $totalPendapatan = pinjamModel::Where(['created_by' => MyHelper::id(),'pinjam_module.status' => 1])
                 ->cari($q)
                 ->time($year, $month)
                 ->select(DB::raw("sum(total) as totalPendapatan"))->get();
             $pdf = \PDF::loadview('admin.pinjam.template.layout', [
-                'title' => $title, 'pinjams' => $pinjams, 'totalPendapatan' => $totalPendapatan[0]->totalPendapatan
-            ])
+                    'title' => $title,
+                    'pinjams' => $pinjams,
+                    'totalTransaksi' => $totalTransaksi . " kali transaksi",
+                    'transaksiBelumLunas' => $transaksiBelumLunas . " transaksi",
+                    'totalPendapatan' => $totalPendapatan[0]->totalPendapatan
+                ])
                 ->setPaper('f4', 'landscape')
                 ->stream($title . $month . ".pdf", array("Attachment" => false));
             return $pdf;
