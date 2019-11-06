@@ -50,6 +50,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -127,18 +131,21 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("section", { staticClass: "unggul" }, [
       _c("div", { staticClass: "head-title" }, [
-        _c("span", [_vm._v("Pelayanan")])
+        _c("span", [_vm._v("Keunggulan")])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-3" }, [
           _c("div", { staticClass: "item" }, [
             _c("div", { staticClass: "icon" }, [
-              _c("i", { staticClass: "fa fa-address-card" })
+              _c("i", { staticClass: "fa fa-calendar" })
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "unggul-desc" }, [
-              _vm._v("\n\t\t\t\t\t\tIni deskripsinya 1\n\t\t\t\t\t")
+              _c("h4", [_vm._v("Jangka Waktu")]),
+              _vm._v(
+                "\n\t\t\t\t\t\tBisa pinjam dalam jangka waktu lama\n\t\t\t\t\t"
+              )
             ])
           ])
         ]),
@@ -146,11 +153,12 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-3" }, [
           _c("div", { staticClass: "item" }, [
             _c("div", { staticClass: "icon" }, [
-              _c("i", { staticClass: "fa fa-address-card" })
+              _c("i", { staticClass: "fa fa-dollar" })
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "unggul-desc" }, [
-              _vm._v("\n\t\t\t\t\t\tIni deskripsinya 2\n\t\t\t\t\t")
+              _c("h4", [_vm._v("Terjangkau")]),
+              _vm._v("\n\t\t\t\t\t\tHarga sewa yang terjangkau\n\t\t\t\t\t")
             ])
           ])
         ]),
@@ -158,11 +166,14 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-3" }, [
           _c("div", { staticClass: "item" }, [
             _c("div", { staticClass: "icon" }, [
-              _c("i", { staticClass: "fa fa-address-card" })
+              _c("i", { staticClass: "fa fa-apple" })
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "unggul-desc" }, [
-              _vm._v("\n\t\t\t\t\t\tIni deskripsinya 3\n\t\t\t\t\t")
+              _c("h4", [_vm._v("Elegant")]),
+              _vm._v(
+                "\n\t\t\t\t\t\tKami mengutamakan ke-elegant-an mobil yang kami sewakan\n\t\t\t\t\t"
+              )
             ])
           ])
         ]),
@@ -170,11 +181,14 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-3" }, [
           _c("div", { staticClass: "item" }, [
             _c("div", { staticClass: "icon" }, [
-              _c("i", { staticClass: "fa fa-address-card" })
+              _c("i", { staticClass: "fa fa-id-card" })
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "unggul-desc" }, [
-              _vm._v("\n\t\t\t\t\t\tIni deskripsinya 4\n\t\t\t\t\t")
+              _c("h4", [_vm._v("Membership")]),
+              _vm._v(
+                "\n\t\t\t\t\t\tKami menawarkan layanan membership untuk penyewaan yang lebih murah\n\t\t\t\t\t"
+              )
             ])
           ])
         ])

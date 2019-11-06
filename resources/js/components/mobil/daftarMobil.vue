@@ -35,7 +35,7 @@
 		},
 		data() {
 			return {
-				title:'Daftar Mobil',
+				title:'Daftar Mobil Tersedia',
 				mobils: []
 			}
 		},

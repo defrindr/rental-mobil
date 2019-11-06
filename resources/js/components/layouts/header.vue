@@ -50,7 +50,7 @@ export default {
         height: auto;
         width: 95%;
         position: relative;
-        padding: 20px 2.5%;
+        padding: 20px 2.5% 0;
         background: #5c6bc0;
         box-shadow: 0px 0px 20px #555;
         .container{

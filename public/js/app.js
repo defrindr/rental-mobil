@@ -1967,6 +1967,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     myHeader: function myHeader() {
@@ -1980,6 +1981,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     myTesti: function myTesti() {
       return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ./index/testimonial.vue */ "./resources/js/components/layouts/index/testimonial.vue"));
+    },
+    ourContact: function ourContact() {
+      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./index/our-contact.vue */ "./resources/js/components/layouts/index/our-contact.vue"));
     }
   },
   data: function data() {
@@ -2110,7 +2114,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      title: 'Daftar Mobil',
+      title: 'Daftar Mobil Tersedia',
       mobils: []
     };
   },
@@ -38153,7 +38157,9 @@ var render = function() {
           _vm._v(" "),
           _c("section-unggul"),
           _vm._v(" "),
-          _c("my-testi")
+          _c("my-testi"),
+          _vm._v(" "),
+          _c("our-contact")
         ],
         1
       ),

@@ -7,6 +7,7 @@
             </div>
 			<section-unggul/>
 			<my-testi/>
+			<our-contact/>
         </div>
 		<my-footer/>
 	</div>
@@ -19,6 +20,7 @@
 			myFooter: () => import('./footer.vue'),
 			sectionUnggul: () =>import('./index/section-unggul.vue'),
 			myTesti: () => import ('./index/testimonial.vue'),
+			ourContact: () => import('./index/our-contact.vue'),
 		},
 		data() {
 			return {

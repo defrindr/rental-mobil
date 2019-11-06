@@ -1,38 +1,42 @@
 <template>
     <section class="unggul">
 		<div class="head-title">
-			<span>Pelayanan</span>
+			<span>Keunggulan</span>
 		</div>
 		<div class="row">
 			<div class="col-3">
 				<div class="item">
-					<div class="icon"><i class="fa fa-address-card"></i></div>
+					<div class="icon"><i class="fa fa-calendar"></i></div>
 					<div class="unggul-desc">
-						Ini deskripsinya 1
+						<h4>Jangka Waktu</h4>
+						Bisa pinjam dalam jangka waktu lama
 					</div>
 				</div>
 			</div>
 			<div class="col-3">
 				<div class="item">
-					<div class="icon"><i class="fa fa-address-card"></i></div>
+					<div class="icon"><i class="fa fa-dollar"></i></div>
 					<div class="unggul-desc">
-						Ini deskripsinya 2
+						<h4>Terjangkau</h4>
+						Harga sewa yang terjangkau
 					</div>
 				</div>
 			</div>
 			<div class="col-3">
 				<div class="item">
-					<div class="icon"><i class="fa fa-address-card"></i></div>
+					<div class="icon"><i class="fa fa-apple"></i></div>
 					<div class="unggul-desc">
-						Ini deskripsinya 3
+						<h4>Elegant</h4>
+						Kami mengutamakan ke-elegant-an mobil yang kami sewakan
 					</div>
 				</div>
 			</div>
 			<div class="col-3">
 				<div class="item">
-					<div class="icon"><i class="fa fa-address-card"></i></div>
+					<div class="icon"><i class="fa fa-id-card"></i></div>
 					<div class="unggul-desc">
-						Ini deskripsinya 4
+						<h4>Membership</h4>
+						Kami menawarkan layanan membership untuk penyewaan yang lebih murah
 					</div>
 				</div>
 			</div>
